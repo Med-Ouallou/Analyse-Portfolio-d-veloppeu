@@ -1,0 +1,10 @@
+@startuml
+actor Visiteur as V
+V --(Consulter la page d'accueil)
+V -- (Lire la section "À propos")
+V -- (Parcourir les projets)
+V -- (Voir les détails d'un projet)
+(Parcourir les projets) -- (Voir les détails d'un projet)
+V -- (Voir les compétences)
+V -- (Envoyer un message via le formulaire de contact)
+@enduml
