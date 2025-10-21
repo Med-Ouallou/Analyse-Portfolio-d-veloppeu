@@ -48,6 +48,27 @@ style: |
 
 ---
 
+## Conception : Design thinking
+
+![image](images/img-4.jpg)
+
+---
+
+## Conception : Defintion
+
+
+ - **Empathize** —— Comprendre les utilisateurs : besoins, émotions, problèmes
+
+ - **Define** —— Définir clairement le problème à résoudre
+
+- **Ideate** —— Générer plusieurs idées créatives
+
+ - **Prototype** —— Créer des versions simples ou maquettes
+
+- **Test** —— Tester les prototypes et apprendre des retou
+
+---
+
 ## Conception : Maquette
 
-![Maquette](imgs/maquette.png)
+![image](images/img-5.png)
