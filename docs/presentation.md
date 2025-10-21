@@ -72,3 +72,10 @@ style: |
 ## Conception : Maquette
 
 ![image](images/img-5.png)
+
+---
+
+## Conception : Class diagram
+
+![image](images/classdiagram.png)
+

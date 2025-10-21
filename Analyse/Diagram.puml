@@ -1,10 +1,24 @@
 @startuml
-actor Visiteur as V
-V --(Consulter la page d'accueil)
-V -- (Lire la section "À propos")
-V -- (Parcourir les projets)
-V -- (Voir les détails d'un projet)
-(Parcourir les projets) -- (Voir les détails d'un projet)
-V -- (Voir les compétences)
-V -- (Envoyer un message via le formulaire de contact)
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Visiteur" as Visitor
+actor "Recruteur" as Recruiter
+Recruiter <|-- Visitor
+
+package "Portfolio Laravel" {
+  usecase "Consulter\nAccueil" as UC_Home
+  usecase "Consulter\nÀ propos" as UC_About
+  usecase "Consulter\nProjets" as UC_Projects
+  usecase "Voir détails\nProjet" as UC_ProjectDetails
+  usecase "Voir les technologies utilisées" as UC_TechnologiesProjects
+}
+
+Visitor -- UC_Home
+Visitor -- UC_About
+Visitor -- UC_Projects
+
+' Optional: relationships
+UC_Projects <.- UC_ProjectDetails : <<extend>>
+UC_ProjectDetails <.- UC_TechnologiesProjects : <<extend>>
 @enduml
