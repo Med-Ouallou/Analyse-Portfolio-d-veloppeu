@@ -79,3 +79,4 @@ style: |
 
 ![image](images/classdiagram.png)
 
+---
