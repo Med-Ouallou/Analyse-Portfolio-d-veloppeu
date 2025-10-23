@@ -1,33 +1,42 @@
 <?php
 
 namespace App\Data;
+use App\Data\TechnologyData;
+
 
 class ProjectsData
 {
+    protected $technologyData;
+
+    public function __construct(TechnologyData $technologyData)
+    {
+        $this->technologyData = $technologyData;
+    }
+
     public static function getAll()
     {
         return [
             [
                 'id' => 1,
-                'title' => 'E-Commerce Platform',
-                'description' => 'A full-featured online shopping platform with payment integration and inventory management',
-                'image' => 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
+                'title' => 'Grocery Management System',
+                'description' => 'A full-featured shopping platform with inventory management and user authentication ',
+                'image' => 'images/groceryStore.jpg',
                 'github_link' => 'https://github.com/johndoe/ecommerce',
                 'demo_link' => 'https://example.com/demo1',
                 'start_date' => '2023-01-15',
                 'end_date' => '2023-06-30',
-                'technologies' => ['React', 'Node.js', 'MongoDB', 'Stripe']
+                'technologies' => [4, 5, 6 , 8],
             ],
             [
                 'id' => 2,
-                'title' => 'Task Management App',
-                'description' => 'Collaborative task management tool for teams with real-time updates',
-                'image' => 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop',
+                'title' => 'Shose Store App',
+                'description' => 'A Shose store application with friendly UI and seamless user experience   ',
+                'image' => 'images/nikeStore.png',
                 'github_link' => 'https://github.com/johndoe/taskmanager',
                 'demo_link' => 'https://example.com/demo2',
                 'start_date' => '2023-07-01',
                 'end_date' => '2023-10-15',
-                'technologies' => ['React', 'Firebase', 'Tailwind CSS']
+                'technologies' => [2, 8],
             ],
             [
                 'id' => 3,
@@ -38,19 +47,22 @@ class ProjectsData
                 'demo_link' => 'https://example.com/demo3',
                 'start_date' => '2023-11-01',
                 'end_date' => '2024-01-20',
-                'technologies' => ['React', 'JavaScript', 'Chart.js']
+                'technologies' => [1, 2, 4],
             ]
         ];
+
     }
 
-    public static function find($id)
+    public function getProjectById($id)
     {
-        $projects = self::getAll();
+        $projects = $this->getAll();
         foreach ($projects as $project) {
             if ($project['id'] == $id) {
+                $project['technologies'] = $this->technologyData->getByIds($project['technologies']);
                 return $project;
             }
         }
         return null;
     }
+
 }

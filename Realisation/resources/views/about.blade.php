@@ -12,20 +12,46 @@
                 <h2 class="text-2xl font-bold mb-2">{{$developer['first_name']}} {{$developer['last_name']}}</h2>
                 <p class="text-xl text-blue-600 mb-4">{{$developer['title']}}</p>
                 <p class="text-gray-700 mb-10">{{$developer['about_me']}}</p>
-                <div class="space-y-2">
-                    <a href="mailto:Mouallou279@gmail.com" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group">
-                        <span class="flex items-center justify-center w-10 h-10 bg-blue-100 text-blue-600 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <a href="mailto:Mouallou279@gmail.com" 
+                        class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group">
+                        <span class="flex items-center justify-center w-10 h-10 bg-blue-100 text-blue-600 rounded-full 
+                                    group-hover:bg-blue-600 group-hover:text-white transition-colors">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
                         <span class="font-medium">{{$developer['email']}}</span>
                     </a>
-                    <a href="tel:+212612345678" class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group">
-                        <span class="flex items-center justify-center w-10 h-10 bg-blue-100 text-blue-600 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors">
+
+                    <a href="tel:+212612345678" 
+                        class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group">
+                        <span class="flex items-center justify-center w-10 h-10 bg-blue-100 text-blue-600 rounded-full 
+                                    group-hover:bg-blue-600 group-hover:text-white transition-colors">
                             <i class="fa-solid fa-phone"></i>
                         </span>
                         <span class="font-medium">{{$developer['phone']}}</span>
                     </a>
+
+                    <a href="https://github.com/Med-Ouallou" target="_blank" 
+                        class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group">
+                        <span class="flex items-center justify-center w-10 h-10 bg-blue-100 text-blue-600 rounded-full 
+                                    group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                        <span class="font-medium">Github</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/mohamed-ouallou-b3a46a28b" target="_blank" 
+                        class="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors group">
+                        <span class="flex items-center justify-center w-10 h-10 bg-blue-100 text-blue-600 rounded-full 
+                                    group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </span>
+                        <span class="font-medium">Linkedin</span>
+                    </a>
                 </div>
+
+
             </div>
         </div>
     </div>

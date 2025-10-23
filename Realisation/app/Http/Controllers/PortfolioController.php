@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Data\DeveloperData;
-use App\Data\ProjectDetailsData;
+use App\Data\TechnologyData;
 use App\Data\ProjectsData;
 
 
@@ -13,10 +13,10 @@ class PortfolioController extends Controller
     protected $projectDetails;
     protected $projectData;
 
-    public function __construct(DeveloperData $developer,ProjectDetailsData $projectDetails,ProjectsData $projectData)
+    public function __construct(DeveloperData $developer,ProjectsData $projectData,TechnologyData $technologyData)
     {
         $this->developer = $developer;
-        $this->projectDetails = $projectDetails;
+        $this->technologyData = $technologyData;
         $this->projectData = $projectData;
     }
 
@@ -32,7 +32,12 @@ class PortfolioController extends Controller
     }
 
     public function projects() {
-        $projectData = $this->projectData->getAll();
-        return view('projects', compact('projectData'));
+        $projects = $this->projectData->getAll();
+        return view('projects', compact('projects'));
+    }
+
+    public function projectDetails($id) {
+        $project = $this->projectData->getProjectById($id);
+        return view('project-details', compact('project'));
     }
 }
